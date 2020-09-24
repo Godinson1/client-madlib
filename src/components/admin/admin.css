@@ -1,0 +1,72 @@
+.admin {
+  display: flex;
+  place-content: center;
+}
+
+.admin-table {
+  display: flex;
+  place-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  font-weight: 600;
+  border: 5px solid black;
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
+td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btns {
+  display: flex;
+  place-content: center;
+  gap: 20px;
+}
+
+.btn-exp {
+  width: 160px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  background: green;
+  color: white;
+  outline: none;
+  margin: 15px 0 15px 0;
+}
+
+.btn-exp:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.error {
+  display: flex;
+  place-content: center;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(226, 204, 204);
+  text-align: center;
+}
+
+.inputs {
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

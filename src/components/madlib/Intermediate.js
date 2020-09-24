@@ -1,0 +1,161 @@
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import "./madlib.css";
+import queryString from "query-string";
+import { intermediateMadlib } from "../../actions/madlib";
+import { useHistory } from "react-router-dom";
+
+export default function Intermediate({ location }) {
+  const [numberOne, seNumberOne] = useState("");
+  const [halloweenCostume, setHalloweenCostume] = useState("");
+  const [largeNumber, setLargeNumber] = useState("");
+  const [snackFood, setSnackFood] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [animal, setAnimal] = useState("");
+  const [size, setSize] = useState("");
+  const [exclamation, setExclamation] = useState("");
+  const [adjectiveOne, setAdjectiveOne] = useState("");
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const { n, e, z, u, r } = queryString.parse(location.search);
+  const handleNumberOne = (e) => seNumberOne(e.target.value);
+  const handleHalloweenCostume = (e) => setHalloweenCostume(e.target.value);
+  const handleLargeNumber = (e) => setLargeNumber(e.target.value);
+  const handleSnackFood = (e) => setSnackFood(e.target.value);
+  const handleOccupation = (e) => setOccupation(e.target.value);
+  const handleAnimal = (e) => setAnimal(e.target.value);
+  const handleExclamation = (e) => setExclamation(e.target.value);
+  const handleAdjective = (e) => setAdjectiveOne(e.target.value);
+  const handleSize = (e) => setSize(e.target.value);
+
+  const easyData = {
+    username: n,
+    email: e,
+    zipcode: z,
+    updates: u,
+    rules: r,
+    numberOne,
+    size,
+    snackFood,
+    adjectiveOne,
+    occupation,
+    animal,
+    largeNumber,
+    halloweenCostume,
+    exclamation,
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(intermediateMadlib(easyData, history));
+  };
+
+  return (
+    <div>
+      <div className="banner-landing">
+        <h1>INTERMEDIATE (AGE 8 -12)</h1>
+        <div className="container">
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              <div className="forms">
+                <h5>NUMBER:</h5>
+                <input
+                  type="text"
+                  onChange={handleNumberOne}
+                  value={numberOne}
+                  className="form"
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>HALLOWEEN COSTUME:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleHalloweenCostume}
+                  value={halloweenCostume}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>LARGE NUMBER:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleLargeNumber}
+                  value={largeNumber}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>SNACK FOOD:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleSnackFood}
+                  value={snackFood}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>OCCUPATION:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleOccupation}
+                  value={occupation}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>SIZE:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleSize}
+                  value={size}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>ANIMAL:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleAnimal}
+                  value={animal}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>EXCLAMATION:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleExclamation}
+                  value={exclamation}
+                  required
+                />
+              </div>
+              <div className="forms">
+                <h5>ADJECTIVE:</h5>
+                <input
+                  type="text"
+                  className="form"
+                  onChange={handleAdjective}
+                  value={adjectiveOne}
+                  required
+                />
+              </div>
+              <button className="cont" type="submit">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
