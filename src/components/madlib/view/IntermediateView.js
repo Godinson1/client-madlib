@@ -17,9 +17,9 @@ const IntermediateView = ({ location }) => {
   useEffect(() => {
     console.log(searchParam);
     dispatch(retrieveMadlib(searchParam));
-  }, [retrieveMadlib]);
+  }, [dispatch, searchParam]);
 
-  const { loading, madlib } = data;
+  const { madlib } = data;
 
   return (
     <div>

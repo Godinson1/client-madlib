@@ -5,14 +5,17 @@ import { Link } from "react-router-dom";
 import { retrieveMadlib } from "../../../actions/madlib";
 
 const EasyView = ({ location }) => {
-  const { e } = queryString.parse(location.search);
-
-  useEffect(() => {
-    dispatch(retrieveMadlib(e));
-  }, [retrieveMadlib]);
-
   const dispatch = useDispatch();
   const data = useSelector((state) => state.user.madlib);
+  const { e } = queryString.parse(location.search);
+
+  const searchPattern = {
+    email: e,
+  };
+
+  useEffect(() => {
+    dispatch(retrieveMadlib(searchPattern));
+  }, [dispatch, searchPattern]);
 
   return (
     <div>

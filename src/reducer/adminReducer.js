@@ -49,13 +49,6 @@ export default function (state = initialState, action) {
         loading: true,
       };
 
-    case ADMIN_LOGIN_FAIL:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
-      };
-
     case SET_UNAUTHENTICATED:
       return {
         ...state,

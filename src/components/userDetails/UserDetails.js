@@ -79,7 +79,7 @@ const UserDetails = ({ location }) => {
                 ></input>
                 <small>
                   I have read and agreed to the{" "}
-                  <a href="#">Rules and Regulations</a>
+                  <Link to="#">Rules and Regulations</Link>
                 </small>
               </div>
               <div className="forms">

@@ -9,7 +9,7 @@ const Admin = () => {
 
   useEffect(() => {
     dispatch(getUsersData());
-  }, [getUsersData]);
+  }, [dispatch]);
 
   const handleLogout = () => {
     dispatch(logoutAdmin());
@@ -89,8 +89,8 @@ const Admin = () => {
                       <td>{username}</td>
                       <td>{email}</td>
                       <td>{zipcode}</td>
-                      <td>{rules == true ? "True" : "False"}</td>
-                      <td>{updates == true ? "True" : "False"}</td>
+                      <td>{rules === true ? "True" : "False"}</td>
+                      <td>{updates === true ? "True" : "False"}</td>
                       <td>{clickCount}</td>
                     </tr>
                   );
