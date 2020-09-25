@@ -48,7 +48,7 @@ const AdvancedMadlib = ({ location }) => {
                 part of the school day. This week I made{" "}
                 <span className="lib">{data.foodOne}</span> and{" "}
                 <span className="lib">{data.foodTwo}</span> for my lunch. It’s a
-                weird combination, I know,but it’s just so good! It is going to
+                weird combination, I know, but it’s just so good! It is going to
                 be a <span className="lib">{data.adjectiveThree}</span> year - I
                 hope I get to learn about{" "}
                 <span className="lib">{data.noun}</span> in my{" "}

@@ -55,19 +55,19 @@ const AdvancedView = ({ location }) => {
                   one of my classmates logged in for online learning, we saw a{" "}
                   <span className="lib">{data[0].animal}</span> in the
                   background! It stood there and chewed on a piece of{" "}
-                  <span className="lib">{data[0].object}</span>
-                  for
+                  <span className="lib">{data[0].object}</span> for{" "}
                   <span className="lib">{data[0].numberTwo}</span> minutes
                   before my classmate realized.It was so funny! I’m really
                   enjoying my{" "}
                   <span className="lib">{data[0].schoolSubjectOne}</span> class
-                  because my teacher Mr. NAMEis the most{" "}
+                  because my teacher Mr.{" "}
+                  <span className="lib">{data[0].name}</span> is the most{" "}
                   <span className="lib">{data[0].adjectiveTwo}</span> teacher
                   I’ve ever had! Lunch has always been my second favorite part
                   of the school day. This week I made{" "}
                   <span className="lib">{data[0].foodOne}</span> and{" "}
                   <span className="lib">{data[0].foodTwo}</span> for my lunch.
-                  It’s a weird combination, I know,but it’s just so good! It is
+                  It’s a weird combination, I know, but it’s just so good! It is
                   going to be a{" "}
                   <span className="lib">{data[0].adjectiveThree}</span> year - I
                   hope I get to learn about{" "}
