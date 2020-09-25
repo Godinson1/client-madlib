@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./details.css";
 import queryString from "query-string";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { isEmail } from "../../helpers/validator";
 
 const UserDetails = ({ location }) => {
   const [name, setName] = useState("");
@@ -9,6 +10,7 @@ const UserDetails = ({ location }) => {
   const [zipcode, setZipcode] = useState("");
   const [rules, setRules] = useState(false);
   const [updates, setUpdates] = useState(false);
+  const [error, setError] = useState(null);
 
   const { category } = queryString.parse(location.search);
   const handleName = (e) => setName(e.target.value);
@@ -26,9 +28,17 @@ const UserDetails = ({ location }) => {
     category,
   };
 
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    if (!isEmail(email)) {
+      setError("Must be a valid email address");
+    } else {
+      history.push(
+        `/${category}?n=${name}&e=${email}&z=${zipcode}&u=${updates}&r=${rules}`
+      );
+    }
   };
 
   return (
@@ -41,7 +51,14 @@ const UserDetails = ({ location }) => {
         </h5>
         <div className="container">
           <div className="form-container">
-            <form onSubmit={handleSubmit}>
+            {error ? (
+              <div className="error">
+                <span>{error}</span>
+              </div>
+            ) : (
+              ""
+            )}
+            <form>
               <div className="forms">
                 <h5>
                   <span id="required">**</span> Name:
@@ -105,17 +122,14 @@ const UserDetails = ({ location }) => {
                   updates.
                 </small>
               </div>
-              <Link
-                to={`/${category}?n=${name}&e=${email}&z=${zipcode}&u=${updates}&r=${rules}`}
+              <button
+                className="cont"
+                type="submit"
+                disabled={rules === false ? true : false}
+                onClick={handleSubmit}
               >
-                <button
-                  className="cont"
-                  type="submit"
-                  disabled={rules === false ? true : false}
-                >
-                  Continue
-                </button>
-              </Link>
+                Continue
+              </button>
             </form>
           </div>
         </div>
