@@ -13,7 +13,7 @@ export const loginAdmin = (adminDetails, history) => async (dispatch) => {
   dispatch({ type: LOADING_ADMIN });
   try {
     const res = await axios.post(
-      "http://localhost:4000/auth/login",
+      "https://madlib-test.herokuapp.com/auth/login",
       adminDetails
     );
     console.log(res.data);
@@ -42,7 +42,7 @@ export const logoutAdmin = () => (dispatch) => {
 export const getUsersData = () => async (dispatch) => {
   dispatch({ type: LOADING_USERS_DATA });
   try {
-    const res = await axios.get("http://localhost:4000/madlib");
+    const res = await axios.get("https://madlib-test.herokuapp.com/madlib");
     dispatch({
       type: USERS_DATA,
       payload: res.data,
