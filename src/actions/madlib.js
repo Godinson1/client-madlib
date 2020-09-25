@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const easyMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
-  try {
+  /*try {
     const res = await axios.post(
       "https://madlib-test.herokuapp.com/madlib/easy",
       data
@@ -15,7 +15,7 @@ export const easyMadlib = (data, history) => async (dispatch) => {
     history.push(`/madlib/easy?e=${data.email}`);
   } catch (err) {
     dispatch({ type: MADLIB_FAIL, payload: err.response.data });
-  }
+  }*/
 };
 
 export const intermediateMadlib = (data, history) => async (dispatch) => {

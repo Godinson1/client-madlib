@@ -16,7 +16,7 @@ export default function Intermediate({ location }) {
   const [exclamation, setExclamation] = useState("");
   const [adjectiveOne, setAdjectiveOne] = useState("");
 
-  const data = useSelector((state) => state.user.madlib);
+  const data = useSelector((state) => state.user);
 
   const { loading } = data;
 

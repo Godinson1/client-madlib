@@ -13,7 +13,7 @@ export default function Easy({ location }) {
   const [favouriteSchoolSport, setFavouriteSchoolSport] = useState("");
   const [animal, setAnimal] = useState("");
 
-  const data = useSelector((state) => state.user.madlib);
+  const data = useSelector((state) => state.user);
 
   const { loading } = data;
 
