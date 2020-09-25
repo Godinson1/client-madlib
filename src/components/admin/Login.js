@@ -11,7 +11,7 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -22,7 +22,7 @@ export default function Login() {
     e.preventDefault();
     const validEmail = isEmail(email);
     if (!validEmail) {
-      setError("Must be a valid email address");
+      setErrors("Must be a valid email address");
     }
     const adminDetails = {
       email,
@@ -31,13 +31,19 @@ export default function Login() {
     dispatch(loginAdmin(adminDetails, history));
   };
 
-  const { loading } = admin;
+  const { loading, error } = admin;
   return (
     <div className="login">
       <div className="containers">
         <div className="login-container">
           <h1 className="h1-login">Admin Login</h1>
-          {error ? <div className="error">{error}</div> : ""}
+          {errors ? (
+            <div className="error">{errors}</div>
+          ) : error ? (
+            <div className="error">{error.data.message}</div>
+          ) : (
+            ""
+          )}
           <form onSubmit={handleSubmit}>
             <div>
               <label>Email Address:</label>
