@@ -66,7 +66,7 @@ export default function Intermediate({ location }) {
               <div className="forms">
                 <h5>NUMBER:</h5>
                 <input
-                  type="text"
+                  type="number"
                   onChange={handleNumberOne}
                   value={numberOne}
                   className="form"
@@ -86,7 +86,7 @@ export default function Intermediate({ location }) {
               <div className="forms">
                 <h5>LARGE NUMBER:</h5>
                 <input
-                  type="text"
+                  type="number"
                   className="form"
                   onChange={handleLargeNumber}
                   value={largeNumber}
@@ -116,7 +116,7 @@ export default function Intermediate({ location }) {
               <div className="forms">
                 <h5>SIZE:</h5>
                 <input
-                  type="text"
+                  type="number"
                   className="form"
                   onChange={handleSize}
                   value={size}

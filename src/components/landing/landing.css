@@ -25,3 +25,10 @@
 .level-box:hover {
   background: white;
 }
+
+@media screen and (max-width: 500px) {
+  .banner {
+    overflow: auto;
+    height: 100vh;
+  }
+}

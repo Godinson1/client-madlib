@@ -94,7 +94,7 @@ export default function Advanced({ location }) {
               <div className="forms">
                 <h5>NUMBER:</h5>
                 <input
-                  type="text"
+                  type="number"
                   className="form"
                   onChange={handleNumberOne}
                   value={numberOne}
@@ -104,7 +104,7 @@ export default function Advanced({ location }) {
               <div className="forms">
                 <h5>YEAR FROM THE PAST:</h5>
                 <input
-                  type="text"
+                  type="number"
                   className="form"
                   onChange={handleYearFromPast}
                   value={yearFromPast}
@@ -144,7 +144,7 @@ export default function Advanced({ location }) {
               <div className="forms">
                 <h5>NUMBER:</h5>
                 <input
-                  type="text"
+                  type="number"
                   className="form"
                   onChange={handleNumberTwo}
                   value={numberTwo}
