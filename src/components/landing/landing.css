@@ -1,7 +1,8 @@
-.banner-landing {
-  background: lightpink;
+.banner {
+  background-color: lightpink;
+  height: 585px;
   text-align: center;
-  overflow: auto;
+  overflow: hidden;
   padding: 40px;
 }
 

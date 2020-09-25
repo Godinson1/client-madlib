@@ -1,8 +1,8 @@
 .banner-landing {
-  height: 100vh;
-  background: lightpink;
+  background-color: lightpink;
+  height: 585px;
   text-align: center;
-  overflow: auto;
+  overflow: hidden;
   padding: 40px;
 }
 
@@ -52,4 +52,13 @@ a {
   font-size: 20px;
   margin-left: 20px;
   padding: 0 20px 0 20px;
+}
+
+.formik {
+  cursor: pointer;
+}
+
+#required {
+  color: red;
+  font-size: 14px;
 }

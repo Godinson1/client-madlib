@@ -12,6 +12,26 @@ table {
   width: 100%;
 }
 
+.login {
+  height: 100vh;
+  background-color: lightpink;
+  overflow: hidden;
+}
+
+.login-container {
+  width: 500px;
+  background: lightcyan;
+  text-align: center;
+  padding: 40px;
+}
+
+.containers {
+  display: flex;
+  place-content: center;
+  text-align: center;
+  margin: 5%;
+}
+
 thead {
   font-weight: 600;
   border: 5px solid black;
@@ -48,19 +68,20 @@ td {
 }
 
 .error {
-  display: flex;
-  place-content: center;
-  width: 200px;
-  height: 60px;
+  width: 100%px;
+  height: 30px;
   background-color: rgb(226, 204, 204);
   text-align: center;
+  font-weight: 500;
+  padding: 5px;
 }
 
 .inputs {
-  width: 140px;
+  width: 280px;
   height: 30px;
   border-radius: 5px;
   margin: 10px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 480px) {

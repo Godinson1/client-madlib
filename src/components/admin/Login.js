@@ -27,9 +27,9 @@ export default function Login() {
 
   const { loading, error } = admin;
   return (
-    <div>
-      <div className="container">
-        <div className="form-container">
+    <div className="login">
+      <div className="containers">
+        <div className="login-container">
           <h1 className="h1-login">Admin Login</h1>
           {error ? <div className="error">{error.data.message}</div> : ""}
           <form onSubmit={handleSubmit}>

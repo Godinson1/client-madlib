@@ -35,12 +35,17 @@ const UserDetails = ({ location }) => {
     <div>
       <div className="banner-landing">
         <h1>MOM'S BEST BACK TO LOL TRIVIA CONTEST</h1>
-        <h5>**Please complete the following before continuing**</h5>
+        <h5>
+          Please complete the following before continuing - (Required Fields{" "}
+          <span id="required">**</span>)
+        </h5>
         <div className="container">
           <div className="form-container">
             <form onSubmit={handleSubmit}>
               <div className="forms">
-                <h5>Name:</h5>
+                <h5>
+                  <span id="required">**</span> Name:
+                </h5>
                 <input
                   type="text"
                   onChange={handleName}
@@ -50,7 +55,9 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
-                <h5>Email:</h5>
+                <h5>
+                  <span id="required">**</span> Email:
+                </h5>
                 <input
                   type="email"
                   className="form"
@@ -60,7 +67,9 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
-                <h5>Zipcode:</h5>
+                <h5>
+                  <span id="required">**</span> Zipcode:
+                </h5>
                 <input
                   type="text"
                   className="form"
@@ -70,6 +79,7 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
+                <span id="required">**</span>
                 <input
                   type="checkbox"
                   onChange={handleRules}

@@ -10,21 +10,16 @@ const IntermediateView = ({ location }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.user.madlib);
 
-  const searchParam = {
-    email: e,
-  };
-
   useEffect(() => {
-    console.log(searchParam);
-    dispatch(retrieveMadlib(searchParam));
-  }, [dispatch, searchParam]);
+    dispatch(retrieveMadlib(e));
+  }, [dispatch, e]);
 
-  const { madlib } = data;
+  const madlib = data;
 
   return (
     <div>
       <div className="banner-landing">
-        {madlib ? (
+        {madlib && madlib[0] ? (
           <div>
             <Link to="/">
               <button className="sub" type="submit">
@@ -38,24 +33,24 @@ const IntermediateView = ({ location }) => {
                   {" "}
                   Summer is officially over, and even though classes look a bit
                   different this year, I’m excited to finally be in{" "}
-                  <span className="lib">{madlib.numberOne}</span>th grade. I
+                  <span className="lib">{madlib[0].numberOne}</span>th grade. I
                   have to tell you about my first day back – it was so funny! We
                   got to pick a fun outfit to wear, so I put on my{" "}
-                  <span className="lib">{madlib.halloweenCostume}</span>
+                  <span className="lib">{madlib[0].halloweenCostume}</span>
                   costume – it was awesome! When it was time to introduce
                   ourselves, I told my classmates about when I went camping this
                   summer and ate
-                  <span className="lib">{madlib.largeNumber}</span> pieces of{" "}
-                  <span className="lib">{madlib.snackFood}</span>. I also said
-                  that I want to be a
-                  <span className="lib">{madlib.occupation}</span> when I grow
-                  up. Right as I finished speaking, I looked out the window and
-                  saw a <span className="lib">{madlib.size}</span> wild{" "}
+                  <span className="lib">{madlib[0].largeNumber}</span> pieces of{" "}
+                  <span className="lib">{madlib[0].snackFood}</span>. I also
+                  said that I want to be a
+                  <span className="lib">{madlib[0].occupation}</span> when I
+                  grow up. Right as I finished speaking, I looked out the window
+                  and saw a <span className="lib">{madlib[0].size}</span> wild{" "}
                   <span className="lib">{madlib.animal}</span> run by! It
                   startled me, so I screamed{" "}
-                  <span className="lib">“{madlib.exclamation}!”</span> It was a{" "}
-                  <span className="lib">{madlib.adjectiveOne}</span> start to
-                  this year, and I’m ready to tackle school!
+                  <span className="lib">“{madlib[0].exclamation}!”</span> It was
+                  a <span className="lib">{madlib[0].adjectiveOne}</span> start
+                  to this year, and I’m ready to tackle school!
                 </p>
               </div>
             </div>

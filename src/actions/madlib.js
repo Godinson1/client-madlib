@@ -56,8 +56,7 @@ export const retrieveMadlib = (data) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
     const res = await axios.get(
-      "https://madlib-test.herokuapp.com/madlib/retrieve",
-      data
+      `https://madlib-test.herokuapp.com/madlib/retrieve/${data}`
     );
     dispatch({
       type: MADLIB_SUCCESS,

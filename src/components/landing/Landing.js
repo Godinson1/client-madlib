@@ -9,7 +9,7 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="banner-landing">
+      <div className="banner">
         <div>
           <h1>MOM'S BEST BACK TO LOL TRIVIA CONTEST</h1>
           <h3>**Select a Category below based on your age**</h3>
