@@ -20,11 +20,19 @@ const AdvancedView = ({ location }) => {
       <div className="banner-landing">
         {data && data[0] ? (
           <div>
-            <Link to="/">
-              <button className="sub" type="submit">
-                Create Madlib
-              </button>
-            </Link>
+            <div className="view-header">
+              <div>
+                <Link to="/">
+                  <button className="sub" type="submit">
+                    Create Madlib
+                  </button>
+                </Link>
+              </div>
+              <div>
+                <small>Created By: </small>
+                <small>Created On: </small>
+              </div>
+            </div>
             <div className="container">
               <div className="form-container">
                 <h1>ADVANCED MADLIB</h1>

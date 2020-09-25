@@ -7,7 +7,7 @@ import queryString from "query-string";
 
 const EasyMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
-  const url = `http://localhost:3000/madlib/view/easy?e=${e}`;
+  const url = `https://madlib-test.netlify.app/madlib/view/easy?e=${e}`;
   const shareText = "Hey there! Just made a madlib, Check it out!";
 
   const data = useSelector((state) => state.user.madlib);

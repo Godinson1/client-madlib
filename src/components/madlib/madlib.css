@@ -72,6 +72,11 @@ a {
   line-height: 45px;
 }
 
+.view-header {
+  display: flex;
+  gap: 40px;
+}
+
 @media screen and (max-width: 480px) {
   .form-container {
     width: 100%;

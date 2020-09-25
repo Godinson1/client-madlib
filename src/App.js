@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Landing } from "./components/landing/";
 import { UserDetails } from "./components/userDetails/";
 import NotFound from "./components/notFound";
@@ -15,6 +15,7 @@ import {
   AdvancedView,
 } from "./components/madlib/view";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Loader from "./helpers/Loader";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -43,25 +44,30 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route path="/details" component={UserDetails} />
-            <Route path="/easy" component={Easy} />
-            <Route path="/intermediate" component={Intermediate} />
-            <Route path="/advanced" component={Advanced} />
-            <ProtectedRoute path="/admin" component={Admin} />
-            <Route path="/madlib/easy" component={EasyMadlib} />
-            <Route path="/madlib/intermediate" component={IntermediateMadlib} />
-            <Route path="/madlib/advanced" component={AdvancedMadlib} />
-            <Route path="/madlib/view/easy" component={EasyView} />
-            <Route path="/login" component={Login} />
-            <Route
-              path="/madlib/view/intermediate"
-              component={IntermediateView}
-            />
-            <Route path="/madlib/view/advanced" component={AdvancedView} />
-            <Route component={NotFound} />
-          </Switch>
+          <Suspense fallback={<Loader />}>
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route path="/details" component={UserDetails} />
+              <Route path="/easy" component={Easy} />
+              <Route path="/intermediate" component={Intermediate} />
+              <Route path="/advanced" component={Advanced} />
+              <ProtectedRoute path="/admin" component={Admin} />
+              <Route path="/madlib/easy" component={EasyMadlib} />
+              <Route
+                path="/madlib/intermediate"
+                component={IntermediateMadlib}
+              />
+              <Route path="/madlib/advanced" component={AdvancedMadlib} />
+              <Route path="/madlib/view/easy" component={EasyView} />
+              <Route path="/login" component={Login} />
+              <Route
+                path="/madlib/view/intermediate"
+                component={IntermediateView}
+              />
+              <Route path="/madlib/view/advanced" component={AdvancedView} />
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
         </Router>
       </Provider>
     </div>

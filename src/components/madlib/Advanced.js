@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./madlib.css";
 import queryString from "query-string";
 import { advancedMadlib } from "../../actions/madlib";
@@ -21,6 +21,10 @@ export default function Advanced({ location }) {
   const [adjectiveOne, setAdjectiveOne] = useState("");
   const [adjectiveTwo, setAdjectiveTwo] = useState("");
   const [adjectiveThree, setAdjectiveThree] = useState("");
+
+  const data = useSelector((state) => state.user.madlib);
+
+  const { loading } = data;
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -227,8 +231,8 @@ export default function Advanced({ location }) {
                   required
                 />
               </div>
-              <button className="cont" type="submit">
-                Continue
+              <button className="sub" type="submit" disabled={loading}>
+                {loading ? "Loading..." : "Submit"}
               </button>
             </form>
           </div>

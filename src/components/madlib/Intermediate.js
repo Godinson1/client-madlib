@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./madlib.css";
 import queryString from "query-string";
 import { intermediateMadlib } from "../../actions/madlib";
@@ -15,6 +15,10 @@ export default function Intermediate({ location }) {
   const [size, setSize] = useState("");
   const [exclamation, setExclamation] = useState("");
   const [adjectiveOne, setAdjectiveOne] = useState("");
+
+  const data = useSelector((state) => state.user.madlib);
+
+  const { loading } = data;
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -149,8 +153,8 @@ export default function Intermediate({ location }) {
                   required
                 />
               </div>
-              <button className="cont" type="submit">
-                Continue
+              <button className="sub" type="submit" disabled={loading}>
+                {loading ? "Loading..." : "Submit"}
               </button>
             </form>
           </div>

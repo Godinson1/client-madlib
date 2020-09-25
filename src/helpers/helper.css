@@ -1,0 +1,10 @@
+.loader {
+  display: flex;
+  place-content: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}

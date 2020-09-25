@@ -7,7 +7,7 @@ import queryString from "query-string";
 
 const IntermediateMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
-  const url = `http://localhost:3000/madlib/view/intermediate?e=${e}`;
+  const url = `https://madlib-test.netlify.app/madlib/view/intermediate?e=${e}`;
   const shareText = "Hey there! Just made a madlib, Check it out!";
 
   const data = useSelector((state) => state.user.madlib);
@@ -21,11 +21,10 @@ const IntermediateMadlib = ({ location }) => {
   return (
     <div>
       <div className="banner-landing">
-        <h1>HERE IS YOUR MADLIB</h1>
         <div className="container">
           {data ? (
             <div className="form-container" ref={myRef}>
-              <h1>Intermediate MADLIB</h1>
+              <h1>INTERMEDIATE MADLIB</h1>
               <p className="story">
                 {" "}
                 Summer is officially over, and even though classes look a bit

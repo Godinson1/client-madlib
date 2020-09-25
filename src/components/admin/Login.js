@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginAdmin } from "../../actions/admin";
 import { useHistory } from "react-router-dom";
 import "./admin.css";
+import { isEmail } from "../../helpers/validator";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -18,6 +20,10 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validEmail = isEmail(email);
+    if (!validEmail) {
+      setError("Must be a valid email address");
+    }
     const adminDetails = {
       email,
       password,
@@ -25,13 +31,13 @@ export default function Login() {
     dispatch(loginAdmin(adminDetails, history));
   };
 
-  const { loading, error } = admin;
+  const { loading } = admin;
   return (
     <div className="login">
       <div className="containers">
         <div className="login-container">
           <h1 className="h1-login">Admin Login</h1>
-          {error ? <div className="error">{error.data.message}</div> : ""}
+          {error ? <div className="error">{error}</div> : ""}
           <form onSubmit={handleSubmit}>
             <div>
               <label>Email Address:</label>
