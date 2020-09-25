@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./details.css";
 import queryString from "query-string";
 import { Link, useHistory } from "react-router-dom";
@@ -12,12 +13,20 @@ const UserDetails = ({ location }) => {
   const [updates, setUpdates] = useState(false);
   const [error, setError] = useState(null);
 
+  const details = useSelector((state) => state.admin.details);
+
   const { category } = queryString.parse(location.search);
   const handleName = (e) => setName(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
   const handleZipcode = (e) => setZipcode(e.target.value);
   const handleRules = () => setRules(!rules);
   const handleUpdates = () => setUpdates(!updates);
+
+  let existingEmail;
+
+  if (details && details.data) {
+    existingEmail = details.data.find((data) => data.email === email);
+  }
 
   const data = {
     name,
@@ -34,6 +43,8 @@ const UserDetails = ({ location }) => {
     e.preventDefault();
     if (!isEmail(email)) {
       setError("Must be a valid email address");
+    } else if (existingEmail) {
+      setError("Email already used.. Try another!");
     } else {
       history.push(
         `/${category}?n=${name}&e=${email}&z=${zipcode}&u=${updates}&r=${rules}`

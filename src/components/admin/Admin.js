@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsersData, logoutAdmin } from "../../actions/admin";
 import "./admin.css";
@@ -6,10 +6,6 @@ import "./admin.css";
 const Admin = () => {
   const dispatch = useDispatch();
   const details = useSelector((state) => state.admin.details);
-
-  useEffect(() => {
-    dispatch(getUsersData());
-  }, [dispatch]);
 
   const handleLogout = () => {
     dispatch(logoutAdmin());
@@ -49,7 +45,7 @@ const Admin = () => {
     const a = document.createElement("a");
     a.href = "data:attachment/csv," + csvString;
     a.target = "_Blank";
-    a.download = "generatedCode.csv";
+    a.download = "madlib.csv";
     document.body.appendChild(a);
     a.click();
   };
