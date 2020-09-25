@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { retrieveMadlib } from "../../../actions/madlib";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 const AdvancedView = ({ location }) => {
   const dispatch = useDispatch();
@@ -13,6 +15,8 @@ const AdvancedView = ({ location }) => {
     dispatch(retrieveMadlib(e));
   }, [dispatch, e]);
 
+  dayjs.extend(relativeTime);
+
   console.log(data && data[0] && data[0].adjectiveOne);
 
   return (
@@ -22,15 +26,17 @@ const AdvancedView = ({ location }) => {
           <div>
             <div className="view-header">
               <div>
+                <h6>
+                  Created By: {data[0].username} -{" "}
+                  {dayjs(data[0].createdAt).fromNow()}
+                </h6>
+              </div>
+              <div>
                 <Link to="/">
                   <button className="sub" type="submit">
                     Create Madlib
                   </button>
                 </Link>
-              </div>
-              <div>
-                <small>Created By: </small>
-                <small>Created On: </small>
               </div>
             </div>
             <div className="container">
@@ -58,7 +64,7 @@ const AdvancedView = ({ location }) => {
                   because my teacher Mr. NAMEis the most{" "}
                   <span className="lib">{data[0].adjectiveTwo}</span> teacher
                   I’ve ever had! Lunch has always been my second favorite part
-                  of the school day. This week I made
+                  of the school day. This week I made{" "}
                   <span className="lib">{data[0].foodOne}</span> and{" "}
                   <span className="lib">{data[0].foodTwo}</span> for my lunch.
                   It’s a weird combination, I know,but it’s just so good! It is

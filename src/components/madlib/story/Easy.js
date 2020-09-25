@@ -31,8 +31,8 @@ const EasyMadlib = ({ location }) => {
               <h1>EASY MADLIB</h1>
               <p className="story">
                 It’s officially fall! As the tree leaves outside change from{" "}
-                <span className="lib">{data.colorOne}</span>
-                to <span className="lib">{data.colorTwo}</span>, it’s time for a
+                <span className="lib">{data.colorOne}</span> to{" "}
+                <span className="lib">{data.colorTwo}</span>, it’s time for a
                 new season of learning. My favorite subject in school is{" "}
                 <span className="lib">{data.schoolSubjectOne}</span>. My
                 teacher, Mrs. <span className="lib">{data.name}</span>, makes it

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { retrieveMadlib } from "../../../actions/madlib";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 const IntermediateView = ({ location }) => {
   const { e } = queryString.parse(location.search);
@@ -15,17 +17,28 @@ const IntermediateView = ({ location }) => {
   }, [dispatch, e]);
 
   const madlib = data;
+  dayjs.extend(relativeTime);
 
   return (
     <div>
       <div className="banner-landing">
         {madlib && madlib[0] ? (
           <div>
-            <Link to="/">
-              <button className="sub" type="submit">
-                Create Madlib
-              </button>
-            </Link>
+            <div className="view-header">
+              <div>
+                <h6>
+                  Created By: {data[0].username} -{" "}
+                  {dayjs(data[0].createdAt).fromNow()}
+                </h6>
+              </div>
+              <div>
+                <Link to="/">
+                  <button className="sub" type="submit">
+                    Create Madlib
+                  </button>
+                </Link>
+              </div>
+            </div>
             <div className="container">
               <div className="form-container">
                 <h1>Intermediate MADLIB</h1>
@@ -36,13 +49,13 @@ const IntermediateView = ({ location }) => {
                   <span className="lib">{madlib[0].numberOne}</span>th grade. I
                   have to tell you about my first day back – it was so funny! We
                   got to pick a fun outfit to wear, so I put on my{" "}
-                  <span className="lib">{madlib[0].halloweenCostume}</span>
+                  <span className="lib">{madlib[0].halloweenCostume} </span>{" "}
                   costume – it was awesome! When it was time to introduce
                   ourselves, I told my classmates about when I went camping this
-                  summer and ate
+                  summer and ate{" "}
                   <span className="lib">{madlib[0].largeNumber}</span> pieces of{" "}
                   <span className="lib">{madlib[0].snackFood}</span>. I also
-                  said that I want to be a
+                  said that I want to be a{" "}
                   <span className="lib">{madlib[0].occupation}</span> when I
                   grow up. Right as I finished speaking, I looked out the window
                   and saw a <span className="lib">{madlib[0].size}</span> wild{" "}

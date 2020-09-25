@@ -32,10 +32,9 @@ const IntermediateMadlib = ({ location }) => {
                 <span className="lib">{data.numberOne}</span>th grade. I have to
                 tell you about my first day back – it was so funny! We got to
                 pick a fun outfit to wear, so I put on my{" "}
-                <span className="lib">{data.halloweenCostume}</span>
-                costume – it was awesome! When it was time to introduce
-                ourselves, I told my classmates about when I went camping this
-                summer and ate
+                <span className="lib">{data.halloweenCostume}</span> costume –
+                it was awesome! When it was time to introduce ourselves, I told
+                my classmates about when I went camping this summer and ate
                 <span className="lib">{data.largeNumber}</span> pieces of{" "}
                 <span className="lib">{data.snackFood}</span>. I also said that
                 I want to be a<span className="lib">{data.occupation}</span>{" "}

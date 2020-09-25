@@ -45,7 +45,7 @@ const AdvancedMadlib = ({ location }) => {
                 because my teacher Mr. <span className="lib">{data.name}</span>{" "}
                 is the most <span className="lib">{data.adjectiveTwo}</span>{" "}
                 teacher I’ve ever had! Lunch has always been my second favorite
-                part of the school day. This week I made
+                part of the school day. This week I made{" "}
                 <span className="lib">{data.foodOne}</span> and{" "}
                 <span className="lib">{data.foodTwo}</span> for my lunch. It’s a
                 weird combination, I know,but it’s just so good! It is going to
