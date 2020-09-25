@@ -2,6 +2,7 @@
   display: flex;
   place-content: center;
   text-align: center;
+  top: 0;
 }
 
 .h1-nf {

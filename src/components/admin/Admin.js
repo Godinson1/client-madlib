@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUsersData, logoutAdmin } from "../../actions/admin";
+import { logoutAdmin } from "../../actions/admin";
+import { compareValues } from "./helper";
 import "./admin.css";
 
 const Admin = () => {
+  const [toggle, setToggle] = useState(true);
+  const [currentSort, setCurrentSort] = useState("");
+  const [userDetails, setUserDetails] = useState([]);
+
   const dispatch = useDispatch();
   const details = useSelector((state) => state.admin.details);
+
+  useEffect(() => {
+    if (details && details.data) {
+      setUserDetails(details.data);
+    }
+  }, [details]);
 
   const handleLogout = () => {
     dispatch(logoutAdmin());
   };
 
-  console.log(details && details.data);
+  const sortData = (data) => {
+    setToggle((prevState) => !prevState);
+    setCurrentSort(data);
+    setUserDetails([...userDetails].sort(compareValues("clickCount", toggle)));
+  };
 
   const handleCsv = () => {
     const csvRow = [];
@@ -60,17 +75,83 @@ const Admin = () => {
             <thead className="table-heading">
               <tr>
                 <td>ID</td>
-                <td>NAME</td>
-                <td>EMAIL</td>
-                <td>ZIPCODE</td>
-                <td>RULES</td>
-                <td>UPDATES</td>
-                <td>COUNTS</td>
+                <td onClick={() => sortData("name")}>
+                  NAME {""}
+                  {currentSort === "username" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("email")}>
+                  EMAIL {""}
+                  {currentSort === "email" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("zipcode")}>
+                  ZIPCODE {""}
+                  {currentSort === "zipcode" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("rules")}>
+                  RULES {""}
+                  {currentSort === "rules" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("updates")}>
+                  UPDATES {""}
+                  {currentSort === "updates" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("clickCount")}>
+                  COUNTS {""}
+                  {currentSort === "clickCount" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
+                    ) : (
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
               </tr>
             </thead>
             <tbody className="table-body">
-              {details &&
-                details.data.map((data, i) => {
+              {userDetails &&
+                userDetails.map((data, i) => {
                   const {
                     username,
                     email,
