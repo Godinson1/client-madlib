@@ -1,11 +1,11 @@
 import { LOADING_MADLIB, MADLIB_FAIL, MADLIB_SUCCESS } from "./types";
 import axios from "axios";
-import { BASE_URL_LOCALHOST } from "./constant";
+import { BASE_URL } from "./constant";
 
 export const easyMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
-    const res = await axios.post(`${BASE_URL_LOCALHOST}/madlib/easy`, data);
+    const res = await axios.post(`${BASE_URL}/madlib/easy`, data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
@@ -19,10 +19,7 @@ export const easyMadlib = (data, history) => async (dispatch) => {
 export const intermediateMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
-    const res = await axios.post(
-      `${BASE_URL_LOCALHOST}/madlib/intermediate`,
-      data
-    );
+    const res = await axios.post(`${BASE_URL}/madlib/intermediate`, data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
@@ -36,7 +33,7 @@ export const intermediateMadlib = (data, history) => async (dispatch) => {
 export const advancedMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
-    const res = await axios.post(`${BASE_URL_LOCALHOST}/madlib/advanced`, data);
+    const res = await axios.post(`${BASE_URL}/madlib/advanced`, data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
@@ -50,9 +47,7 @@ export const advancedMadlib = (data, history) => async (dispatch) => {
 export const retrieveMadlib = (data) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
-    const res = await axios.get(
-      `${BASE_URL_LOCALHOST}/madlib/retrieve/${data}`
-    );
+    const res = await axios.get(`${BASE_URL}/madlib/retrieve/${data}`);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
