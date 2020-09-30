@@ -8,12 +8,13 @@ import {
   USERS_DATA_FAIL,
 } from "./types";
 import axios from "axios";
+import { BASE_URL_LOCALHOST } from "./constant";
 
 export const loginAdmin = (adminDetails, history) => async (dispatch) => {
   dispatch({ type: LOADING_ADMIN });
   try {
     const res = await axios.post(
-      "https://madlib-test.herokuapp.com/auth/login",
+      `${BASE_URL_LOCALHOST}/auth/login`,
       adminDetails
     );
     console.log(res.data);
@@ -42,7 +43,7 @@ export const logoutAdmin = () => (dispatch) => {
 export const getUsersData = () => async (dispatch) => {
   dispatch({ type: LOADING_USERS_DATA });
   try {
-    const res = await axios.get("https://madlib-test.herokuapp.com/madlib");
+    const res = await axios.get(`${BASE_URL_LOCALHOST}/madlib`);
     dispatch({
       type: USERS_DATA,
       payload: res.data,

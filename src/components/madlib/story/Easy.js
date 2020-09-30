@@ -4,11 +4,11 @@ import Facebook from "react-sharingbuttons/dist/buttons/Facebook";
 import Twitter from "react-sharingbuttons/dist/buttons/Twitter";
 import { convertImage } from "./helper";
 import queryString from "query-string";
+import { SHARE_URL, SHARE_TEXT } from "./constant";
 
 const EasyMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
-  const url = `https://madlib-test.netlify.app/madlib/view/easy?e=${e}`;
-  const shareText = "Hey there! Just made a madlib, Check it out!";
+  const url = `${SHARE_URL}/easy?e=${e}`;
 
   const data = useSelector((state) => state.user.madlib);
 
@@ -27,8 +27,8 @@ const EasyMadlib = ({ location }) => {
       <div className="banner-landing">
         <div className="container">
           {data ? (
-            <div className="form-container" ref={myRef}>
-              <h1>EASY MADLIB</h1>
+            <div className="form-container-madlib" ref={myRef}>
+              <h2>EASY MADLIB</h2>
               <p className="story">
                 It’s officially fall! As the tree leaves outside change from{" "}
                 <span className="lib">{data.colorOne}</span> to{" "}
@@ -54,7 +54,7 @@ const EasyMadlib = ({ location }) => {
           Download
         </button>
         <Facebook url={url} />
-        <Twitter url={url} shareText={shareText} />
+        <Twitter url={url} shareText={SHARE_TEXT} />
       </div>
     </div>
   );

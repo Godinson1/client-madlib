@@ -79,153 +79,153 @@ export default function Advanced({ location }) {
       <div className="banner-landing">
         <h1>ADVANCED (AGE 13 -18)</h1>
         <div className="container">
-          <div className="form-container">
+          <div className="form-container-madlib">
             <form onSubmit={handleSubmit}>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>ADJECTIVE:</h5>
                 <input
                   type="text"
                   onChange={handleAdjectiveOne}
                   value={adjectiveOne}
-                  className="form"
+                  className="form-madlib"
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>NUMBER:</h5>
                 <input
                   type="number"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleNumberOne}
                   value={numberOne}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>YEAR FROM THE PAST:</h5>
                 <input
                   type="number"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleYearFromPast}
                   value={yearFromPast}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>PLACE:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handlePlace}
                   value={place}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>ANIMAL:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleAnimal}
                   value={animal}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>OBJECT:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleObject}
                   value={object}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>NUMBER:</h5>
                 <input
                   type="number"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleNumberTwo}
                   value={numberTwo}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>SCHOOL SUBJECT:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleSchoolSubjectOne}
                   value={schoolSubjectOne}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>NAME:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleName}
                   value={name}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>ADJECTIVE:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleAdjectiveTwo}
                   value={adjectiveTwo}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>FOOD:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleFoodOne}
                   value={foodOne}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>FOOD:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleFoodTwo}
                   value={foodTwo}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>ADJECTIVE:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleAdjectiveThree}
                   value={adjectiveThree}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>NOUN:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleNoun}
                   value={noun}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>SCHOOL SUBJECT:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleSchoolSubjectTwo}
                   value={schoolSubjectTwo}
                   required

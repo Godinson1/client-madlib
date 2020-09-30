@@ -1,13 +1,11 @@
 import { LOADING_MADLIB, MADLIB_FAIL, MADLIB_SUCCESS } from "./types";
 import axios from "axios";
+import { BASE_URL_LOCALHOST } from "./constant";
 
 export const easyMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
-  /*try {
-    const res = await axios.post(
-      "https://madlib-test.herokuapp.com/madlib/easy",
-      data
-    );
+  try {
+    const res = await axios.post(`${BASE_URL_LOCALHOST}/madlib/easy`, data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
@@ -15,14 +13,14 @@ export const easyMadlib = (data, history) => async (dispatch) => {
     history.push(`/madlib/easy?e=${data.email}`);
   } catch (err) {
     dispatch({ type: MADLIB_FAIL, payload: err.response.data });
-  }*/
+  }
 };
 
 export const intermediateMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
     const res = await axios.post(
-      "https://madlib-test.herokuapp.com/madlib/intermediate",
+      `${BASE_URL_LOCALHOST}/madlib/intermediate`,
       data
     );
     dispatch({
@@ -38,10 +36,7 @@ export const intermediateMadlib = (data, history) => async (dispatch) => {
 export const advancedMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
-    const res = await axios.post(
-      "https://madlib-test.herokuapp.com/madlib/advanced",
-      data
-    );
+    const res = await axios.post(`${BASE_URL_LOCALHOST}/madlib/advanced`, data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
@@ -56,7 +51,7 @@ export const retrieveMadlib = (data) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
     const res = await axios.get(
-      `https://madlib-test.herokuapp.com/madlib/retrieve/${data}`
+      `${BASE_URL_LOCALHOST}/madlib/retrieve/${data}`
     );
     dispatch({
       type: MADLIB_SUCCESS,

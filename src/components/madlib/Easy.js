@@ -51,65 +51,66 @@ export default function Easy({ location }) {
   return (
     <div>
       <div className="banner-landing">
+        <div className="header-madlib"></div>
         <h1>EASY (AGE 3 - 7)</h1>
         <div className="container">
-          <div className="form-container">
+          <div className="form-container-madlib">
             <form onSubmit={handleSubmit}>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>COLOR:</h5>
                 <input
                   type="text"
                   onChange={handleColorOne}
                   value={colorOne}
-                  className="form"
+                  className="form-madlib"
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>COLOR:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleColorTwo}
                   value={colorTwo}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>SCHOOL SUBJECT:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleSchoolSubject}
                   value={schoolSubjectOne}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>NAME:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleName}
                   value={name}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>FAVOURITE SCHOOL SPORT:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleSetFavouriteSport}
                   value={favouriteSchoolSport}
                   required
                 />
               </div>
-              <div className="forms">
+              <div className="forms-madlib">
                 <h5>ANIMAL:</h5>
                 <input
                   type="text"
-                  className="form"
+                  className="form-madlib"
                   onChange={handleAnimal}
                   value={animal}
                   required

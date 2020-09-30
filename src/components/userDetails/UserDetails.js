@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./details.css";
 import queryString from "query-string";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { isEmail } from "../../helpers/validator";
+import { FILL_RULES, EMAIL_IN_USE, INVALID_EMAIL } from "./constant";
 
 const UserDetails = ({ location }) => {
   const [name, setName] = useState("");
@@ -28,23 +29,16 @@ const UserDetails = ({ location }) => {
     existingEmail = details.data.find((data) => data.email === email);
   }
 
-  const data = {
-    name,
-    email,
-    zipcode,
-    rules,
-    updates,
-    category,
-  };
-
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isEmail(email)) {
-      setError("Must be a valid email address");
+      setError(INVALID_EMAIL);
     } else if (existingEmail) {
-      setError("Email already used.. Try another!");
+      setError(EMAIL_IN_USE);
+    } else if (rules !== true) {
+      setError(FILL_RULES);
     } else {
       history.push(
         `/${category}?n=${name}&e=${email}&z=${zipcode}&u=${updates}&r=${rules}`
@@ -55,13 +49,15 @@ const UserDetails = ({ location }) => {
   return (
     <div>
       <div className="banner-landing">
-        <h1>MOM'S BEST BACK TO LOL TRIVIA CONTEST</h1>
-        <h5>
-          Please complete the following before continuing - (Required Fields{" "}
-          <span id="required">**</span>)
-        </h5>
+        <div className="header">
+          <h1>MOM'S BEST BACK TO LOL TRIVIA CONTEST</h1>
+          <h5>
+            Please complete the following before continuing - (Required Fields{" "}
+            <span id="required">**</span>)
+          </h5>
+        </div>
         <div className="container">
-          <div className="form-container">
+          <div className="form-containers">
             {error ? (
               <div className="error">
                 <span>{error}</span>
@@ -69,11 +65,11 @@ const UserDetails = ({ location }) => {
             ) : (
               ""
             )}
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="forms">
-                <h5>
+                <label>
                   <span id="required">**</span> Name:
-                </h5>
+                </label>
                 <input
                   type="text"
                   onChange={handleName}
@@ -83,9 +79,9 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
-                <h5>
+                <label>
                   <span id="required">**</span> Email:
-                </h5>
+                </label>
                 <input
                   type="email"
                   className="form"
@@ -95,9 +91,9 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
-                <h5>
+                <label>
                   <span id="required">**</span> Zipcode:
-                </h5>
+                </label>
                 <input
                   type="text"
                   className="form"
@@ -107,38 +103,36 @@ const UserDetails = ({ location }) => {
                 />
               </div>
               <div className="forms">
-                <span id="required">**</span>
-                <input
-                  type="checkbox"
-                  onChange={handleRules}
-                  value={rules}
-                  defaultChecked={rules}
-                  className="formik"
-                ></input>
-                <small>
-                  I have read and agreed to the{" "}
-                  <Link to="#">Rules and Regulations</Link>
-                </small>
+                <div>
+                  <span id="required">**</span>
+                  <input
+                    type="checkbox"
+                    onChange={handleRules}
+                    value={rules}
+                    defaultChecked={rules}
+                    className="formik"
+                  />
+                  <small>
+                    I have read and agreed to the Rules and Regulations
+                  </small>
+                </div>
               </div>
               <div className="forms">
-                <input
-                  type="checkbox"
-                  onChange={handleUpdates}
-                  value={updates}
-                  defaultChecked={updates}
-                  className="formik"
-                ></input>
-                <small>
-                  I would like to receive future Mom’s Best news, coupons and
-                  updates.
-                </small>
+                <div>
+                  <input
+                    type="checkbox"
+                    onChange={handleUpdates}
+                    value={updates}
+                    defaultChecked={updates}
+                    className="formik"
+                  ></input>
+                  <small>
+                    I would like to receive future Mom’s Best news, coupons and
+                    updates.
+                  </small>
+                </div>
               </div>
-              <button
-                className="cont"
-                type="submit"
-                disabled={rules === false ? true : false}
-                onClick={handleSubmit}
-              >
+              <button className="cont" type="submit" disabled={false}>
                 Continue
               </button>
             </form>

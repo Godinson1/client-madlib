@@ -1,18 +1,26 @@
-.form-container {
-  width: 70%;
-  height: 120%;
-  background: lightcyan;
-  text-align: center;
-  padding: 10px;
-}
-
 .container {
   display: flex;
   place-content: center;
   text-align: center;
 }
 
-.forms {
+.form-container-madlib {
+  width: 70%;
+  background: cornflowerblue;
+  text-align: center;
+  padding: 10px;
+  margin: 2% 0 5px 0;
+}
+
+h2 {
+  color: black;
+}
+
+.header-madlib {
+  margin-top: 5%;
+}
+
+.forms-madlib {
   display: flex;
   text-align: center;
   place-content: center;
@@ -36,6 +44,10 @@ a {
   margin-top: 15px;
 }
 
+.cont:focus {
+  outline: none;
+}
+
 .sub {
   width: 160px;
   height: 40px;
@@ -49,17 +61,16 @@ a {
   margin: 15px 0 15px 0;
 }
 
-.form {
+.form-madlib {
   width: 200px;
-  height: 30px;
-  outline: none;
   border-right: none;
   border-top: none;
   border-left: none;
   background: transparent;
   font-size: 20px;
-  margin-left: 20px;
+  margin: 5px 0 25px 20px;
   padding: 0 20px 0 20px;
+  border-color: black;
 }
 
 .banner-landing {
@@ -74,8 +85,11 @@ a {
 
 .view-header {
   display: flex;
-  gap: 450px;
+  gap: 30px;
+  flex-wrap: wrap;
   place-content: center;
+  margin-top: 3%;
+  color: white;
 }
 
 @media screen and (max-width: 480px) {

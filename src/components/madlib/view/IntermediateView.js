@@ -40,8 +40,8 @@ const IntermediateView = ({ location }) => {
               </div>
             </div>
             <div className="container">
-              <div className="form-container">
-                <h1>Intermediate MADLIB</h1>
+              <div className="form-container-madlib">
+                <h2>Intermediate MADLIB</h2>
                 <p>
                   {" "}
                   Summer is officially over, and even though classes look a bit
