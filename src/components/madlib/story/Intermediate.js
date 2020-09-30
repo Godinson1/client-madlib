@@ -4,11 +4,11 @@ import Facebook from "react-sharingbuttons/dist/buttons/Facebook";
 import Twitter from "react-sharingbuttons/dist/buttons/Twitter";
 import { convertImage } from "./helper";
 import queryString from "query-string";
+import { SHARE_TEXT, SHARE_URL } from "./constant";
 
 const IntermediateMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
-  const url = `https://madlib-test.netlify.app/madlib/view/intermediate?e=${e}`;
-  const shareText = "Hey there! Just made a madlib, Check it out!";
+  const url = `${SHARE_URL}/intermediate?e=${e}`;
 
   const data = useSelector((state) => state.user.madlib);
 
@@ -23,8 +23,8 @@ const IntermediateMadlib = ({ location }) => {
       <div className="banner-landing">
         <div className="container">
           {data ? (
-            <div className="form-container" ref={myRef}>
-              <h1>INTERMEDIATE MADLIB</h1>
+            <div className="form-container-madlib" ref={myRef}>
+              <h2>INTERMEDIATE MADLIB</h2>
               <p className="story">
                 {" "}
                 Summer is officially over, and even though classes look a bit
@@ -57,7 +57,7 @@ const IntermediateMadlib = ({ location }) => {
           Download
         </button>
         <Facebook url={url} />
-        <Twitter url={url} shareText={shareText} />
+        <Twitter url={url} shareText={SHARE_TEXT} />
       </div>
     </div>
   );

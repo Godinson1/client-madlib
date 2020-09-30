@@ -36,7 +36,7 @@ export default function Login() {
     <div className="login">
       <div className="containers">
         <div className="login-container">
-          <h1 className="h1-login">Admin Login</h1>
+          <h2 className="h1-login">Admin Login</h2>
           {errors ? (
             <div className="error">{errors}</div>
           ) : error ? (

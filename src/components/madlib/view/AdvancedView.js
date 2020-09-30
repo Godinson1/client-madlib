@@ -40,8 +40,8 @@ const AdvancedView = ({ location }) => {
               </div>
             </div>
             <div className="container">
-              <div className="form-container">
-                <h1>ADVANCED MADLIB</h1>
+              <div className="form-container-madlib">
+                <h2>ADVANCED MADLIB</h2>
                 <p className="story">
                   Where to begin? This year has been{" "}
                   <span className="lib">{data[0].adjectiveOne}</span>, to say

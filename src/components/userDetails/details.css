@@ -1,28 +1,29 @@
 .banner-landing {
-  background-color: lightpink;
-  height: 585px;
+  background: linear-gradient(rgb(58, 27, 173), rgb(21, 8, 70));
+  height: 100vh;
   text-align: center;
-  overflow: hidden;
-  padding: 40px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.form-container {
-  width: 500px;
-  height: 300px;
-  background: lightcyan;
+.banner-landing::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.form-containers {
+  height: 100%;
+  background: cornflowerblue;
   text-align: center;
+  padding: 20px;
+  margin: 10px;
 }
 
 .container {
   display: flex;
   place-content: center;
   text-align: center;
-}
-
-.forms {
-  display: flex;
-  text-align: center;
-  place-content: center;
 }
 
 a {
@@ -41,17 +42,22 @@ a {
   outline: none;
 }
 
+.forms {
+  display: grid;
+  text-align: center;
+  place-content: center;
+}
+
 .form {
-  width: 200px;
-  height: 30px;
+  width: 250px;
   outline: none;
   border-right: none;
   border-top: none;
   border-left: none;
   background: transparent;
   font-size: 20px;
-  margin-left: 20px;
-  padding: 0 20px 0 20px;
+  margin: 10px 0 20px 20px;
+  border-color: black;
 }
 
 .formik {

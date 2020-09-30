@@ -38,8 +38,8 @@ const EasyView = ({ location }) => {
               </div>
             </div>
             <div className="container">
-              <div className="form-container">
-                <h1>EASY MADLIB</h1>
+              <div className="form-container-madlib">
+                <h2>EASY MADLIB</h2>
                 <p className="story">
                   It’s officially fall! As the tree leaves outside change from{" "}
                   <span className="lib">{data[0].colorOne}</span> to{" "}

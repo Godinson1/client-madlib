@@ -4,11 +4,11 @@ import Facebook from "react-sharingbuttons/dist/buttons/Facebook";
 import Twitter from "react-sharingbuttons/dist/buttons/Twitter";
 import { convertImage } from "./helper";
 import queryString from "query-string";
+import { SHARE_URL, SHARE_TEXT } from "./constant";
 
 const AdvancedMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
-  const url = `https://madlib-test.netlify.app/madlib/view/advanced?e=${e}`;
-  const shareText = "Hey there! Just made a madlib, Check it out!";
+  const url = `${SHARE_URL}/advanced?e=${e}`;
 
   const data = useSelector((state) => state.user.madlib);
 
@@ -21,10 +21,11 @@ const AdvancedMadlib = ({ location }) => {
   return (
     <div>
       <div className="banner-landing">
+        <div className="header-madlib"></div>
         <div className="container">
           {data ? (
-            <div className="form-container" ref={myRef}>
-              <h1>ADVANCED MADLIB</h1>
+            <div className="form-container-madlib" ref={myRef}>
+              <h2>ADVANCED MADLIB</h2>
               <p className="story">
                 Where to begin? This year has been{" "}
                 <span className="lib">{data.adjectiveOne}</span>, to say the
@@ -65,7 +66,7 @@ const AdvancedMadlib = ({ location }) => {
           Download
         </button>
         <Facebook url={url} />
-        <Twitter url={url} shareText={shareText} />
+        <Twitter url={url} shareText={SHARE_TEXT} />
       </div>
     </div>
   );
