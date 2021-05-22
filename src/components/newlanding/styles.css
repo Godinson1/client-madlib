@@ -1,0 +1,94 @@
+.navbar {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 70px;
+  padding: 20px 40px 20px 40px;
+  background-color: white;
+  box-shadow: 3px 3px 14px 4px rgb(240, 221, 240);
+  gap: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: purple;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.navMenu:hover {
+  color: purple;
+}
+
+.round-design {
+  width: 600px;
+  height: 600px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 20px solid rgb(252, 252, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 60px 0 60px;
+}
+
+.header-info {
+  color: purple;
+  font-weight: 700;
+}
+
+.options-container {
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  border: 1px solid purple;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: purple;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.options-container:hover {
+  background-color: purple;
+  color: white;
+  transition: 0.7s;
+}
+
+.header {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 50px 20px 50px;
+}
+
+#text-header {
+  color: purple;
+  text-align: center;
+  font-size: 3.7rem;
+  line-height: 4.3rem;
+  font-weight: bolder;
+  width: 700px;
+  margin-bottom: 20px;
+}

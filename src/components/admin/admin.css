@@ -12,6 +12,87 @@
   height: 0;
 }
 
+.share {
+  display: flex;
+  gap: 20%;
+  place-items: center;
+}
+
+.sidebar {
+  width: 18%;
+  height: 100vh;
+  position: fixed;
+  background-color: lightblue;
+}
+
+.tab {
+  background: white;
+  box-shadow: rgba(79, 79, 79, 0.1) 0px 6px 14px;
+  height: calc(100vh - 270px - 12rem);
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+}
+
+.tab table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  position: relative;
+}
+
+.tab table thead {
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab table thead tr td {
+  position: sticky;
+  top: 0;
+  background-color: lightblue;
+}
+
+table tr {
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+table tr td {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+table tr td:nth-child(1) {
+  width: 40px;
+}
+
+table tr td:nth-child(2) {
+  width: 25%;
+}
+
+table tr td:nth-child(3) {
+  width: 45%;
+}
+
+table tr td:nth-child(4) {
+  width: 25%;
+}
+
+table tr td:nth-child(5) {
+  width: 25%;
+}
+
+table tr td:nth-child(6) {
+  width: 25%;
+}
+
+table tr td:nth-child(7) {
+  width: 25%;
+}
+/*********/
+
 .admin {
   display: flex;
   place-content: center;
@@ -20,10 +101,6 @@
 .admin-table {
   display: flex;
   place-content: center;
-}
-
-table {
-  width: 100%;
 }
 
 .login {
@@ -47,18 +124,6 @@ table {
   margin: 10%;
 }
 
-thead {
-  font-weight: 600;
-  border: 5px solid black;
-  cursor: pointer;
-  background-color: rgb(98, 95, 228);
-}
-
-td {
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .btns {
   display: flex;
   place-content: center;
@@ -76,10 +141,11 @@ td {
   color: white;
   outline: none;
   margin: 15px 0 15px 0;
+  float: right;
 }
 
 .btn-exp:hover {
-  color: black;
+  color: white;
   background-color: transparent;
 }
 
@@ -100,10 +166,32 @@ td {
   font-size: 18px;
 }
 
-@media screen and (max-width: 480px) {
-  table {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+@media screen and (max-width: 780px) {
+  .tab {
+    height: calc(100vh - 180px - 12rem);
+  }
+
+  table tr {
+    font-size: 1rem;
+  }
+
+  table tbody tr td:nth-child(2) {
+    width: 45%;
+  }
+
+  table tbody tr td:nth-child(3) {
+    width: 65%;
+  }
+
+  table tbody tr td:nth-child(4) {
+    width: 45%;
+  }
+
+  table tbody tr td:nth-child(5) {
+    width: 55%;
+  }
+
+  table tbody tr td:nth-child(6) {
+    width: 45%;
   }
 }

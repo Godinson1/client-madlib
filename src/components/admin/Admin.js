@@ -25,7 +25,7 @@ const Admin = () => {
   const sortData = (data) => {
     setToggle((prevState) => !prevState);
     setCurrentSort(data);
-    setUserDetails([...userDetails].sort(compareValues("clickCount", toggle)));
+    setUserDetails([...userDetails].sort(compareValues(data, toggle)));
   };
 
   const handleCsv = () => {
@@ -35,114 +35,111 @@ const Admin = () => {
   return (
     <div>
       <div className="banner">
-        <div className="container">
-          <div className="form-container-madlib">
-            <h1>ADMIN PANEL</h1>
-            <div></div>
-            <table id="users-details">
-              <thead className="table-heading">
-                <tr>
-                  <td>ID</td>
-                  <td onClick={() => sortData("name")}>
-                    NAME {""}
-                    {currentSort === "username" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+        <h1>ADMIN PANEL</h1>
+        <div className="tab">
+          <table id="users-details">
+            <thead className="table-heading">
+              <tr>
+                <td>ID</td>
+                <td onClick={() => sortData("username")}>
+                  NAME {""}
+                  {currentSort === "username" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                  <td onClick={() => sortData("email")}>
-                    EMAIL {""}
-                    {currentSort === "email" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("email")}>
+                  EMAIL {""}
+                  {currentSort === "email" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                  <td onClick={() => sortData("zipcode")}>
-                    ZIPCODE {""}
-                    {currentSort === "zipcode" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("zipcode")}>
+                  ZIPCODE {""}
+                  {currentSort === "zipcode" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                  <td onClick={() => sortData("rules")}>
-                    RULES {""}
-                    {currentSort === "rules" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("rules")}>
+                  RULES {""}
+                  {currentSort === "rules" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                  <td onClick={() => sortData("updates")}>
-                    UPDATES {""}
-                    {currentSort === "updates" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("updates")}>
+                  UPDATES {""}
+                  {currentSort === "updates" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                  <td onClick={() => sortData("clickCount")}>
-                    COUNTS {""}
-                    {currentSort === "clickCount" ? (
-                      toggle ? (
-                        <span>&#8593;</span>
-                      ) : (
-                        <span>&#8595;</span>
-                      )
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+                <td onClick={() => sortData("clickCount")}>
+                  COUNTS {""}
+                  {currentSort === "clickCount" ? (
+                    toggle ? (
+                      <span>&#8593;</span>
                     ) : (
-                      ""
-                    )}
-                  </td>
-                </tr>
-              </thead>
-              <tbody className="table-body">
-                {userDetails &&
-                  userDetails.map((data, i) => {
-                    const {
-                      username,
-                      email,
-                      zipcode,
-                      rules,
-                      updates,
-                      clickCount,
-                    } = data;
-                    return (
-                      <tr key={i}>
-                        <td>{i + 1}</td>
-                        <td>{username}</td>
-                        <td>{email}</td>
-                        <td>{zipcode}</td>
-                        <td>{rules === true ? "True" : "False"}</td>
-                        <td>{updates === true ? "True" : "False"}</td>
-                        <td>{clickCount}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
-          </div>
+                      <span>&#8595;</span>
+                    )
+                  ) : (
+                    ""
+                  )}
+                </td>
+              </tr>
+            </thead>
+            <tbody className="table-body">
+              {userDetails &&
+                userDetails.map((data, i) => {
+                  const {
+                    username,
+                    email,
+                    zipcode,
+                    rules,
+                    updates,
+                    clickCount,
+                  } = data;
+                  return (
+                    <tr key={i}>
+                      <td>{i + 1}</td>
+                      <td>{username}</td>
+                      <td>{email}</td>
+                      <td>{zipcode}</td>
+                      <td>{rules === true ? "True" : "False"}</td>
+                      <td>{updates === true ? "True" : "False"}</td>
+                      <td>{clickCount}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
         </div>
         <div className="btns">
           <button className="btn-exp" type="submit" onClick={handleCsv}>

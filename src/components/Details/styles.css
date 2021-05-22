@@ -1,0 +1,32 @@
+.detail-container {
+  width: 450px;
+  padding: 20px 40px 20px 40px;
+  background-color: white;
+  box-shadow: 3px 3px 14px 4px rgb(240, 221, 240);
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px 30px 20px 30px;
+  margin-top: 100px;
+}
+
+.base-bottom {
+  margin-bottom: 10px;
+}
+
+.back {
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.btnCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}

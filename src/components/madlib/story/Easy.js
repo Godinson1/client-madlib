@@ -9,7 +9,6 @@ import { SHARE_URL, SHARE_TEXT } from "./constant";
 const EasyMadlib = ({ location }) => {
   const { e } = queryString.parse(location.search);
   const url = `${SHARE_URL}/easy?e=${e}`;
-
   const data = useSelector((state) => state.user.madlib);
 
   if (data) {

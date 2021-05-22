@@ -42,6 +42,10 @@ a {
   outline: none;
 }
 
+.cont:focus {
+  outline: none;
+}
+
 .forms {
   display: grid;
   text-align: center;

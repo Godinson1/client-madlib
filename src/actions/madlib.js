@@ -6,13 +6,17 @@ export const easyMadlib = (data, history) => async (dispatch) => {
   dispatch({ type: LOADING_MADLIB });
   try {
     const res = await axios.post(`${BASE_URL}/madlib/easy`, data);
+    console.log(res.data);
     dispatch({
       type: MADLIB_SUCCESS,
       payload: res.data.data,
     });
     history.push(`/madlib/easy?e=${data.email}`);
   } catch (err) {
-    dispatch({ type: MADLIB_FAIL, payload: err.response.data });
+    if (err && err.response) {
+      console.log(err.response.data);
+      dispatch({ type: MADLIB_FAIL, payload: err.response.data });
+    }
   }
 };
 
@@ -52,7 +56,6 @@ export const retrieveMadlib = (data) => async (dispatch) => {
       type: MADLIB_SUCCESS,
       payload: res.data.data,
     });
-    console.log(res.data);
   } catch (err) {
     dispatch({ type: MADLIB_FAIL, payload: err.response });
   }
