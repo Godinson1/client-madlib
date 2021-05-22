@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import queryString from "query-string";
 import { Button, ScaleFade, Input } from "@chakra-ui/react";
 import { INTERMEDIATE_FORM } from "./constants";
-import { easyMadlib } from "../../actions/madlib";
+import { intermediateMadlib } from "../../actions/madlib";
 import "../Utility/util.css";
 
 const IntermediateForm = ({ location }) => {
@@ -40,7 +40,7 @@ const IntermediateForm = ({ location }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(easyMadlib(easyData, history));
+    dispatch(intermediateMadlib(easyData, history));
   };
 
   const handleOnChange = (e) => {
