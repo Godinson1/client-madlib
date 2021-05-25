@@ -43,8 +43,8 @@ function App() {
     <div className="App">
       <ChakraProvider>
         <Provider store={store}>
-          <Navbar />
           <Router>
+            <Navbar />
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route path="/details" component={Details} />

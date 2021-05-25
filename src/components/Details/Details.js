@@ -62,76 +62,78 @@ const Details = ({ location }) => {
       <div className="header">
         <div className="round-design">
           <ScaleFade initialScale={0.9} in={true}>
-            <div className="detail-container">
-              <div>
-                <br /> Please fill the below to continue.
-              </div>
-              <div>
-                <div className="base-bottom">
-                  <FormControl id="full-name" isRequired>
-                    <FormLabel>First name</FormLabel>
-                    <Input
-                      onChange={handleName}
-                      value={name}
-                      placeholder="Full Name"
-                    />
-                  </FormControl>
+            <div className="detail-forms-container">
+              <div className="details-container">
+                <div className="base-bottom-text">
+                  Please fill the below to continue.
                 </div>
-                <div className="base-bottom">
-                  <FormControl id="full-name" isRequired>
-                    <FormLabel>Email address</FormLabel>
-                    <Input
-                      onChange={handleEmail}
-                      value={email}
-                      type="email"
-                      placeholder="Email address"
-                    />
-                  </FormControl>
-                </div>
-                <div className="base-bottom">
-                  <FormControl id="full-name" isRequired>
-                    <FormLabel>Zipcode</FormLabel>
-                    <Input
-                      onChange={handleZipcode}
-                      value={zipcode}
-                      isRequired
-                      type="number"
-                      placeholder="Zipcode"
-                    />
-                  </FormControl>
-                </div>
-                <div className="base-bottom">
-                  <FormControl id="full-name" isRequired>
+                <div>
+                  <div className="base-bottom">
+                    <FormControl id="full-name" isRequired>
+                      <FormLabel>First name</FormLabel>
+                      <Input
+                        onChange={handleName}
+                        value={name}
+                        placeholder="Full Name"
+                      />
+                    </FormControl>
+                  </div>
+                  <div className="base-bottom">
+                    <FormControl id="full-name" isRequired>
+                      <FormLabel>Email address</FormLabel>
+                      <Input
+                        onChange={handleEmail}
+                        value={email}
+                        type="email"
+                        placeholder="Email address"
+                      />
+                    </FormControl>
+                  </div>
+                  <div className="base-bottom">
+                    <FormControl id="full-name" isRequired>
+                      <FormLabel>Zipcode</FormLabel>
+                      <Input
+                        onChange={handleZipcode}
+                        value={zipcode}
+                        isRequired
+                        type="number"
+                        placeholder="Zipcode"
+                      />
+                    </FormControl>
+                  </div>
+                  <div className="base-bottom">
+                    <FormControl id="full-name" isRequired>
+                      <Checkbox
+                        onChange={handleRules}
+                        value={rules}
+                        defaultChecked={rules}
+                        colorScheme="purple"
+                      >
+                        I have read and agreed to the rules and regulations
+                      </Checkbox>
+                    </FormControl>
+                  </div>
+                  <div className="base-bottom">
                     <Checkbox
-                      onChange={handleRules}
-                      value={rules}
-                      defaultChecked={rules}
+                      onChange={handleUpdates}
+                      value={updates}
+                      defaultChecked={updates}
                       colorScheme="purple"
                     >
-                      I have read and agreed to the rules and regulations
+                      I would like to receive future news, coupons and updates.
                     </Checkbox>
-                  </FormControl>
-                </div>
-                <div className="base-bottom">
-                  <Checkbox
-                    onChange={handleUpdates}
-                    value={updates}
-                    defaultChecked={updates}
-                    colorScheme="purple"
-                  >
-                    I would like to receive future news, coupons and updates.
-                  </Checkbox>
-                </div>
-                <div className="btnCenter">
-                  <Button
-                    onClick={handleSubmit}
-                    height="48px"
-                    width="200px"
-                    colorScheme="purple"
-                    size="lg"
-                  >
-                    Continue
-                  </Button>
+                  </div>
+                  <div className="btnCenter">
+                    <Button
+                      onClick={handleSubmit}
+                      height="48px"
+                      width="200px"
+                      colorScheme="purple"
+                      size="lg"
+                    >
+                      Continue
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
