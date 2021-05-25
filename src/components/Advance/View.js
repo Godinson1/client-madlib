@@ -86,8 +86,11 @@ const AdvanceView = ({ location }) => {
                   </div>
                 </div>
               ) : (
-                <div className="load">
-                  <h1>LOADING...</h1>
+                <div className="flex-center">
+                  <div class="lds-ripple">
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               )}
             </div>

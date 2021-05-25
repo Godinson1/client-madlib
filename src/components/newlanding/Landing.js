@@ -23,7 +23,7 @@ const Landing = () => {
           <div id="text-header">
             Experience madlib fun with family, friends and mutuals.
           </div>
-          <Stack direction="row" spacing={4}>
+          <div className="btn">
             <Button
               onClick={() => onOpen()}
               height="48px"
@@ -33,7 +33,7 @@ const Landing = () => {
             >
               Get Started
             </Button>
-          </Stack>
+          </div>
         </div>
       </div>
       <Modal
@@ -49,7 +49,7 @@ const Landing = () => {
               Hi there, <br /> Welcome, Let's get you started.
             </h1>
             <br />
-            <p>Select any of the options below to continue</p>
+            <h6 id="desc-text">Select any of the options below to continue.</h6>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>

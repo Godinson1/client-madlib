@@ -10,6 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  z-index: 20;
 }
 
 .logo {
@@ -17,6 +19,7 @@
   color: purple;
   font-weight: bolder;
   cursor: pointer;
+  display: flex;
 }
 
 .navMenu {
@@ -31,19 +34,6 @@
 
 .navMenu:hover {
   color: purple;
-}
-
-.round-design {
-  width: 600px;
-  height: 600px;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 20px solid rgb(252, 252, 252);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 60px 0 60px;
 }
 
 .header-info {
@@ -68,19 +58,30 @@
 }
 
 .options-container:hover {
-  background-color: purple;
-  color: white;
+  background-color: rgb(252, 251, 252);
+
   transition: 0.7s;
+}
+
+#desc-text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .header {
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px 50px 20px 50px;
+  padding: 0 30px 20px 30px;
 }
 
 #text-header {
@@ -91,4 +92,54 @@
   font-weight: bolder;
   width: 700px;
   margin-bottom: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid purple;
+  text-align: center;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -1s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    padding-left: 20px;
+  }
 }

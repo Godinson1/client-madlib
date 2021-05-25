@@ -14,10 +14,8 @@
   background-color: white;
   box-shadow: 3px 3px 14px 4px rgb(240, 221, 240);
   border-radius: 10px;
-  padding: 10px 30px 10px 30px;
-  overflow: auto;
-  max-height: 600px;
-  margin-top: 140px;
+  padding: 20px 10px 20px 10px;
+  margin-top: 50px;
 }
 
 .load {
@@ -72,4 +70,36 @@
   line-height: 2.5rem;
   padding: 10px;
   margin: 2% 0 5px 0;
+}
+
+.logo-main {
+  width: 40px;
+  height: 40px;
+  background-color: purple;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .detail-story-container {
+    width: 95vw;
+  }
+
+  .view-header {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

@@ -43,13 +43,14 @@ export const logoutAdmin = () => (dispatch) => {
 export const getUsersData = () => async (dispatch) => {
   dispatch({ type: LOADING_USERS_DATA });
   try {
-    const res = await axios.get(`${BASE_URL_LOCALHOST}/madlib`);
+    const res = await axios.get(`https://madlib-test.herokuapp.com/madlib`);
+    console.log(res.data);
     dispatch({
       type: USERS_DATA,
       payload: res.data,
     });
   } catch (err) {
-    console.log(err.response);
+    console.log(err && err.response && err.response.data);
     dispatch({
       type: USERS_DATA_FAIL,
       payload: err.response,
